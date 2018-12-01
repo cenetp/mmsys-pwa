@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Tag für responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Als Mobile-Web-kompatibel registrieren -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--Link zum PWA-Manifest -->
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="stylesheet" href="css/w3.css" media="all"/>
+  <link rel="stylesheet" href="css/w3-theme-blue-grey.css" media="all"/>
+  <link rel="stylesheet" href="css/style.css" media="all"/>
+  <!-- React einbinden -->
+  <script src="js/react.production.min.js"></script>
+  <script src="js/react-dom.production.min.js"></script>
+  <script src="js/babel.min.js"></script>
+  <!-- Hauptskripte einbinden -->
+  <script src="js/db.js"></script>
+  <script type="text/babel" src="js/App.js"></script>
+  <title>React PWA 2</title>
+</head>
+<body class="w3-theme-l4">
+  <div id="root" class="content-container w3-card-2">
+    <header class="w3-container w3-large w3-theme-d4">
+      <h1>Planer</h1>
+    </header>
+    <div id="planer-content" class="w3-container w3-light-grey">
+      <div id="query">
+        <form>
+          <div class="select-container">
+            Fach:
+            <div id="topic"></div>
+          </div>
+          <div class="select-container">
+            Raum:
+            <div id="room"></div>
+          </div>
+          <div class="select-container" id="mode">
+            <input type="checkbox" name="or" value="OR"> <span>OR</span>
+          </div>
+          <div id="send"></div>
+        </form>
+      </div>
+      <div id="result">
+      </div>
+    </div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js')
+          .then(function(registration) {
+            console.log('SW registriert im Scope: ', registration.scope);
+          }).catch(function(error) {
+            console.log('SW konnte nicht registriert werden.', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

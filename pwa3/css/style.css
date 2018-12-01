@@ -1,0 +1,41 @@
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#planer-content {
+  padding: 20px;
+}
+
+.select-container {
+  width: 33%;
+  display: inline-block;
+}
+
+#send {
+  margin: 20px 0;
+}
+
+select {
+  width: 90%;
+  height: 35px;
+  padding: 2%;
+}
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -7px;
+}
+
+#mode {
+  padding-top: 10px;
+  position: relative;
+}
+
+#mode > span {
+  position: absolute;
+  left: 32px;
+  top: -4px;
+}

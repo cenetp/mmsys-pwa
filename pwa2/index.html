@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Tag für responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Als Mobile-Web-kompatibel registrieren -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!--Link zum PWA-Manifest -->
+  <link rel="manifest" href="./manifest.json"/>
+  <link rel="stylesheet" href="css/style.css" media="all"/>
+  <!-- React einbinden -->
+  <script src="js/react.production.min.js"></script>
+  <script src="js/react-dom.production.min.js"></script>
+  <script src="js/babel.min.js"></script>
+  <!-- Hauptskript einbinden -->
+  <script type="text/babel" src="js/App.js"></script>
+  <title>React PWA 1</title>
+</head>
+<body>
+  <div id="root" class="content-container"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js')
+          .then(function(registration) {
+            console.log('SW registriert im Scope: ', registration.scope);
+          }).catch(function(error) {
+            console.log('SW konnte nicht registriert werden.', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

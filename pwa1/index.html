@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PWA1 -- App Shell Beispiel</title>
+  <link rel="manifest" href="/mmsys-pwa/pwa1/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">App Shell Beispiel</h1>
+  </header>
+  <div id="content">
+    Hier kommt der Inhalt...
+  </div>
+  <script src="app.js" async></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/mmsys-pwa/pwa1/sw.js')
+          .then(function(registration) {
+            console.log('SW registriert im Scope: ', registration.scope);
+          }).catch(function(error) {
+            console.log('SW konnte nicht registriert werden.');
+          });
+      });
+    }
+  </script>
+</body>
+</html>

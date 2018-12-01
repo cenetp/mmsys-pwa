@@ -1,0 +1,8 @@
+{
+  "name": "MultimediaSystemeI",
+  "short_name": "mmsys1",
+  "display": "standalone",
+  "orientation": "landscape",
+  "scope": "/mmsys-pwa/pwa3",
+  "start_url": "/mmsys-pwa/pwa3/index.html"
+}
